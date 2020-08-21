@@ -3,8 +3,10 @@ const path = require("path");
 const clc  = require('chalk');
 const spawnSync = require('child_process').spawnSync;
 
-const nodeexe = process.execPath + " server.js";
+const nodeexe = "node server.js";
 const metadir = __dirname + '/../metadata';
+
+console.log("The meta-dir is "+ metadir);
 
 const excludes = 
 	[
@@ -14,7 +16,9 @@ const excludes =
 		"AutoplotExample1",
 		"AutoplotExample2",
 		"TestData3.0",
-		"TestDataBad"
+		"TestDataBad",
+		"Example3",
+		"Example5"
 	];
 
 files = filelist(metadir, excludes);
@@ -54,6 +58,7 @@ console.log('_________');
 let fails = 0;
 for (var i = 0; i < files.length; i++) {
 	// Run node server.js --test -f metadata/CATALOG.json
+	console.log('File : '+ files[i]);
 	let comt = nodeexe + " --test -f " + metadir + "/" + files[i];
 	fails = fails + execute(comt,2*i);
 
