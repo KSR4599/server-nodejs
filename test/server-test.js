@@ -16,9 +16,7 @@ const excludes =
 		"AutoplotExample1",
 		"AutoplotExample2",
 		"TestData3.0",
-		"TestDataBad",
-		"Example3",
-		"Example5"
+		"TestDataBad"
 	];
 
 files = filelist(metadir, excludes);
