@@ -3,5 +3,4 @@ services:
   - docker
 
 script:
-  - node test/subset-test.js -- --coverage
   - node test/server-test.js -- --coverage
